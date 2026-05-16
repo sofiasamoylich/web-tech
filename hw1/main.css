@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #e0e0e0;
+    background-color: #ffe7e7;
     padding: 20px;
     min-height: 100vh;
     position: relative;
@@ -75,7 +75,7 @@ body {
 .input-field-inline {
     font-size: 18px;
     padding: 4px 8px;
-    border: 1px solid #4a90e2;
+    border: 1px solid #4089dd;
     border-radius: 4px;
     outline: none;
     width: 60%;
