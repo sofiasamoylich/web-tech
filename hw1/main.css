@@ -56,7 +56,6 @@ body {
     outline: none;
 }
 
-/* Рядки товарів */
 .product-row {
     display: flex;
     justify-content: space-between;
@@ -88,7 +87,6 @@ body {
     gap: 10px;
 }
 
-/* Кнопки та бейджі */
 .btn {
     padding: 8px 16px;
     border-radius: 4px;
@@ -287,7 +285,7 @@ body {
 
 [data-tooltip]:hover::after {
     opacity: 1;
-    bottom: calc(100% + 8px); /* Плавно виїжджає нагору над кнопкою */
+    bottom: calc(100% + 8px);
     transform: translateX(-50%) scale(1);
 }
 
