@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кошик покупок</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <main class="container">
+        <section class="left-col">
+            <div class="add-item-box">
+                <input type="text" placeholder="Назва товару" aria-label="Назва товару" class="input-field">
+                <button class="btn btn-primary" data-tooltip="Додати товар до списку">Додати</button>
+            </div>
+
+            <div class="products-list">
+                <div class="product-row">
+                    <span class="product-name editable">Помідори</span>
+                    <div class="controls">
+                        <span class="quantity-badge">2</span>
+                        <button class="btn btn-status" data-tooltip="Позначити як куплене">Не куплено</button>
+                    </div>
+                </div>
+
+                <div class="product-row">
+                    <span class="product-name">Печиво</span>
+                    <div class="controls">
+                        <button class="btn-round btn-minus" data-tooltip="Зменшити кількість" aria-label="Зменшити">−</button>
+                        <span class="quantity-badge bg-gray">2</span>
+                        <button class="btn-round btn-plus" data-tooltip="Збільшити кількість" aria-label="Збільшити">+</button>
+                        <button class="btn btn-status" data-tooltip="Скасувати купівлю">Куплено</button>
+                        <button class="btn-round btn-delete" data-tooltip="Видалити товар" aria-label="Видалити">×</button>
+                    </div>
+                </div>
+
+                <div class="product-row">
+                    <input type="text" value="Сир" class="input-field-inline" aria-label="Редагувати назву">
+                    <div class="controls">
+                        <button class="btn-round btn-minus disabled" disabled aria-label="Зменшити">−</button>
+                        <span class="quantity-badge bg-gray">1</span>
+                        <button class="btn-round btn-plus" data-tooltip="Збільшити кількість" aria-label="Збільшити">+</button>
+                        <button class="btn btn-status" data-tooltip="Скасувати купівлю">Куплено</button>
+                        <button class="btn-round btn-delete" data-tooltip="Видалити товар" aria-label="Видалити">×</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <aside class="right-col">
+            <div class="stats-card">
+                <h2>Залишилося</h2>
+                <div class="stats-list">
+                    <span class="product-tag">Печиво <span class="tag-count">2</span></span>
+                    <span class="product-tag">Сир <span class="tag-count">1</span></span>
+                </div>
+                
+                <hr class="divider">
+                
+                <h2>Куплено</h2>
+                <div class="stats-list crossed-out">
+                    <span class="product-tag">Помідори <span class="tag-count">2</span></span>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <div class="author-badge">
+        <div class="badge-hidden-text">Роботу виконала Самойлич Софія</div>
+        <div class="badge-visible-text">BuyList</div>
+    </div>
+
+</body>
+</html>

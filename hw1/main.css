@@ -1,0 +1,337 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #e0e0e0;
+    padding: 20px;
+    min-height: 100vh;
+    position: relative;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+
+.left-col {
+    flex: 2;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    padding: 15px;
+}
+
+.right-col {
+    flex: 1;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    padding: 20px;
+}
+
+.add-item-box {
+    display: flex;
+    gap: 1px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.input-field {
+    flex: 1;
+    border: none;
+    padding: 12px 15px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Рядки товарів */
+.product-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5px;
+    border-bottom: 1px solid #eee;
+}
+.product-row:last-child {
+    border-bottom: none;
+}
+
+.product-name {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.input-field-inline {
+    font-size: 18px;
+    padding: 4px 8px;
+    border: 1px solid #4a90e2;
+    border-radius: 4px;
+    outline: none;
+    width: 60%;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Кнопки та бейджі */
+.btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.btn-primary {
+    background-color: #4382cd;
+    color: white;
+    border-radius: 0;
+    padding: 0 25px;
+}
+.btn-primary:hover { background-color: #356fae; }
+
+.btn-status {
+    background-color: #f0f0f0;
+    border-color: #ddd;
+    color: #444;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.btn-status:hover { background-color: #e5e5e5; }
+
+.btn-round {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-plus { background-color: #4bc05c; }
+.btn-plus:hover { background-color: #3fa34f; }
+
+.btn-minus { background-color: #db5a51; }
+.btn-minus:hover { background-color: #c44f47; }
+.btn-minus.disabled { background-color: #eba39e; cursor: not-allowed; opacity: 0.7; }
+
+.btn-delete { background-color: #c93b32; border-radius: 4px; font-size: 16px; }
+.btn-delete:hover { background-color: #b03028; }
+
+.quantity-badge {
+    background-color: #e0e0e0;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    min-width: 28px;
+    text-align: center;
+}
+.quantity-badge.bg-gray {
+    background-color: #eaeaea;
+}
+
+.stats-card h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+.stats-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.product-tag {
+    background-color: #eaeaea;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+}
+
+.tag-count {
+    background-color: #e27d34;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.crossed-out .product-tag {
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+
+.author-badge {
+    position: fixed;
+    bottom: 0;
+    left: 20px;
+    background-color: #4a148c;
+    color: #ffffff;
+    padding: 0 15px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 1000;
+    cursor: pointer;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+    
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    
+    transition: height 0.4s ease, background-color 0.4s ease;
+}
+
+.badge-visible-text {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge-hidden-text {
+    height: 0;
+    opacity: 0;
+    font-weight: normal;
+    font-size: 12px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.author-badge:hover {
+    height: 70px; 
+    background-color: #6a1b9a; 
+}
+
+.author-badge:hover .badge-hidden-text {
+    height: 35px;
+    opacity: 1;
+}
+
+
+@media (max-width: 650px) {
+    .container {
+        flex-direction: column;
+    }
+    .left-col, .right-col {
+        width: 100%;
+    }
+}
+
+
+[data-tooltip] {
+    position: relative;
+}
+
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -10px; 
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    background-color: #4a148c;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    
+    transition: opacity 0.3s ease, transform 0.3s ease, bottom 0.3s ease;
+}
+
+[data-tooltip]:hover::after {
+    opacity: 1;
+    bottom: calc(100% + 8px); /* Плавно виїжджає нагору над кнопкою */
+    transform: translateX(-50%) scale(1);
+}
+
+
+@media print {
+    body {
+        background: #fff;
+        color: #000;
+        padding: 0;
+    }
+    
+    .add-item-box, 
+    .btn-round, 
+    .btn-status,
+    [data-tooltip]::after {
+        display: none !important;
+    }
+
+    .left-col, .right-col {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+    }
+
+    .author-badge {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background-color: #ffffff !important;
+        color: #4a148c !important;
+        border: 2px solid #4a148c !important;
+        height: auto !important;
+        padding: 5px 10px !important;
+        border-radius: 4px !important;
+    }
+    
+    .badge-visible-text {
+        display: none !important;
+    }
+    .badge-hidden-text {
+        display: block !important;
+        height: auto !important;
+        opacity: 1 !important;
+        font-weight: bold !important;
+        color: #4a148c !important;
+    }
+}
